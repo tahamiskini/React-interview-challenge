@@ -9,6 +9,16 @@ function App() {
         children: [
           {
             name: 'joi',
+            children: [
+              {
+                name: 'node_moodules',
+                children: [
+                  {
+                    name: 'index.js',
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
@@ -27,6 +37,7 @@ function App() {
   const Entry = ({ entry, depth }: { entry: TEntry; depth: number }) => {
     return (
       <div>
+        {entry.children && "+ "}
         {entry.name}
         <div style={{ paddingLeft: `${depth * 10}px` }}>
           {entry.children?.map((entry) => (
